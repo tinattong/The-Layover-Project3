@@ -23,6 +23,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.2.1",
     "mongojs": "^2.5.0",
     "mongoose": "^4.11.7",
