@@ -27,7 +27,7 @@ router.post("/register", (req, res) => {
      .then(user => {
        if (user) 
          return res.status(400).json({ email: "Email Already Registered" });
-     console.log(req.body);
+   //  console.log(req.body);
         bcrypt.genSalt(10, (err, salt) => {
          // console.log(salt);
           bcrypt.hash(req.body.password, salt, (err, hash) => {
