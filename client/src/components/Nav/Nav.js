@@ -18,6 +18,9 @@ const Nav = () => (
         <div className="collapse navbar-collapse navbar-ex1-collapse">
           <ul className="nav navbar-nav navbar-right">
             <li> 
+              <h2>The Layout</h2>
+            </li>
+            <li> 
             <Link to="/">Sign Up</Link>
             </li>
             <li>

@@ -1,0 +1,10 @@
+
+    /* The image used */
+    .Image {
+    background-image: url("./images/beach-exotic-holiday-248797.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    
