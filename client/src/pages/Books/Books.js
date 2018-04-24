@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-
+import Map from '../../components/Googlemap/googlemap';
+import Nav from '../../components/Nav';
 class Books extends Component {
   state = {
     books: [],
@@ -56,10 +57,17 @@ class Books extends Component {
   render() {
     return (
       <Container fluid>
+      
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Map</h1>
+            {/* <Map
+  isMarkerShown
+  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+  loadingElement={<div style={{ height: `100%` }} />}
+  containerElement={<div style={{ height: `400px` }} />}
+  mapElement={<div style={{ height: `100%` }} />} */}
+/>
             </Jumbotron>
             <form>
               <Input
