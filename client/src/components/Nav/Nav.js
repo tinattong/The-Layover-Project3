@@ -1,4 +1,6 @@
 import React from "react";
+import SignUp from './Modals/SignUp.js'
+import Login from './Modals/Login.js'
 
 const Nav = () => (
   <nav className="navbar navbar-inverse navbar-top">

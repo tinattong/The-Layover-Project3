@@ -14,7 +14,7 @@ import {
 
 const newUser = require("../user.js");
 
-class ModalExample extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,15 +44,6 @@ class ModalExample extends React.Component {
           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
           <ModalBody>
             <FormGroup>
-              <Label for="name">Name</Label>
-              <Input
-                type="string"
-                name="name"
-                id="exampleName"
-                placeholder="with a placeholder"
-              />
-            </FormGroup>
-            <FormGroup>
               <Label for="exampleEmail">Email</Label>
               <Input
                 type="email"
@@ -73,7 +64,7 @@ class ModalExample extends React.Component {
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>
-              Sign Up
+              Login
             </Button>{" "}
             <Button color="secondary" onClick={this.toggle}>
               Cancel
@@ -85,4 +76,4 @@ class ModalExample extends React.Component {
   }
 }
 
-export default ModalExample;
+export default Login;
