@@ -1,5 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import SignUp from './Modals/SignUp.js'
+import Login from './Modals/Login.js'
+//{Link} from "react-router-dom";
+
 
 const Nav = () => (
   <div className="navbar navbar-inverse navbar-top">
