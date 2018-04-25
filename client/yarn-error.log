@@ -45,7 +45,7 @@ Trace:
   Exit code: 3221225786
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c react-scripts start
-  Directory: C:\Users\tinal\Desktop\UCSD\The Layout\Solved\client
+  Directory: C:\Users\tinal\Desktop\The-Layover-Project3\client
   Output:
   
       at ProcessTermError.MessageError (C:\Users\tinal\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
