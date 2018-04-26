@@ -1,34 +1,28 @@
 import React from "react";
-import SignUp from './Modals/SignUp.js'
-import Login from './Modals/Login.js'
-//{Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+//import SignUp from './Modals/SignUp.js';
+//import Login from './Modals/Login.js';
 
 const Nav = () => (
   <div className="navbar navbar-inverse navbar-top">
     <div className="container-fluid">
       <div className="navbar-header">
-        <button type="button" 
-                className="collapsed navbar-toggle"
-                data-toggle="collapse"
-                data-target=".navbar-ex1-collapse"
-                >
+        <h2>Layover</h2>
+       
+        <button
+          type="button"
+          className="collapsed navbar-toggle"
+          data-toggle="collapse"
+          data-target=".navbar-ex1-collapse"
+        >
           <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" /> 
+          <span className="icon-bar" />
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
         <div className="collapse navbar-collapse navbar-ex1-collapse">
           <ul className="nav navbar-nav navbar-right">
-            <li> 
-              <h2>The Layout</h2>
-            </li>
-            <li> 
-            <Link to="/">Sign Up</Link>
-            </li>
-            <li>
-            <Link to="/books">Log in</Link>
-            </li>
+           
           </ul>
         </div>
       </div>
