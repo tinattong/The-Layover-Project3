@@ -5,17 +5,24 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import './app.css'
+
+import beachImg from './images/beach-exotic-holiday-248797.jpg';
+
 const App = () => (
   <Router>
-    <div className = "Image">
+    <div className= "img-container">
+    
+      <img className="backgroundImage" src={beachImg} />      
       
       <Nav />
+
       <Switch>
         <Route exact path="/" component={Books} />
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} />
       </Switch>
+    
     </div>
   </Router>
 );
