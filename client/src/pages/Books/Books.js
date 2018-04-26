@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-import Map from '../../components/Googlemap/googlemap';
-import Nav from '../../components/Nav';
+
 class Books extends Component {
   state = {
     books: [],
@@ -57,52 +56,39 @@ class Books extends Component {
   render() {
     return (
       <Container fluid>
-      
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-            {/* <Map
-  isMarkerShown
-  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-  loadingElement={<div style={{ height: `100%` }} />}
-  containerElement={<div style={{ height: `400px` }} />}
-  mapElement={<div style={{ height: `100%` }} />} */}
-/>
-            </Jumbotron>
+          <Col size="sm-12 md-6 lg-6">
+            <h2 className="places-title text-center">Please enter your favorite place</h2>
             <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Email (required)"
+                placeholder="Destination"
               />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="password (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Optional"
-              />
-              <FormBtn
+            </form>
+            <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit
+                Submit 
               </FormBtn>
-            </form>
           </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Destination</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
+          <Col size="sm-12 md-6 lg-6">
+              <h2 className="places-title  text-center">Interesting Places</h2>
+          </Col>
+</Row>
+<Row>
+
+<Col size="sm-12 md-6 lg-6">
+              <TextArea className="display-list"
+                value={this.state.displaylist}
+                onChange={this.handleInputChange}
+                name="displaylist"
+                placeholder=""
+                />
               <List>
-                {this.state.books.(book => (
+                {this.state.books.map(book => (
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
@@ -113,14 +99,19 @@ class Books extends Component {
                   </ListItem>
                 ))}
               </List>
-            ) : (
-              <h3>Optional</h3>
-            )}
+              </Col>
+              <Col size="sm-12 md-6 lg-6">
+              <TextArea className="favoriteplace"
+              value={this.state.favoriteplace}
+              onChange={this.handleInputChange}
+              name="favoriteplace"
+              placeholder=""
+              />
           </Col>
         </Row>
-      </Container>
-    );
+        </Container>
+      );
+    }
   }
-}
 
 export default Books;

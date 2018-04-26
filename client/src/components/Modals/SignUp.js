@@ -55,7 +55,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>
+        <Button color="primary" onClick={this.toggle}>
           {this.props.buttonLabel} Sign Up
         </Button>
         <Modal

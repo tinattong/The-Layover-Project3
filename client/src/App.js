@@ -1,24 +1,35 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Button, Form,FormGroup,Label,Input,FormTex,Modal,ModalHeader,ModalBody,ModalFooter} from "reactstrap";
-//import Books from "./pages/Books";
-//import Detail from "./pages/Detail";
-//import NoMatch from "./pages/NoMatch";
+import Books from "./pages/Books";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import SignUp from "./components/Modals/SignUp.js"
 import Login from "./components/Modals/Login.js"
+import Footer from "./components/Footer/Footer.js"
 import './app.css'
-import Footer from './components/Footer/Footer';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-    <Nav /> 
-          
-     </div>
-    );
-  }
-};
+import beachImg from './images/beach-exotic-holiday-248797.jpg';
+
+const App = () => (
+  <Router>
+    <div className= "img-container">
+    
+      <img className="backgroundImage" src={beachImg} />      
+      
+      <Nav />
+
+      <Switch>
+        <Route exact path="/" component={Books} />
+        <Route exact path="/books" component={Books} />
+        <Route exact path="/books/:id" component={Detail} />
+        <Route component={NoMatch} />
+      </Switch>
+   
+    <Footer />
+    </div>
+  </Router>
+);
 
 export default App;
