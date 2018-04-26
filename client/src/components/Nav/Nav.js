@@ -1,39 +1,41 @@
-import React from "react";
-import SignUp from './Modals/SignUp.js'
-import Login from './Modals/Login.js'
-//{Link} from "react-router-dom";
+import React, { Component } from 'react'
+import Login from '../Modals/Login';
+import SignUp from '../Modals/SignUp';
 
 
-const Nav = () => (
-  <div className="navbar navbar-inverse navbar-top">
-    <div className="container-fluid">
-      <div className="navbar-header">
-        <button type="button" 
-                className="collapsed navbar-toggle"
-                data-toggle="collapse"
-                data-target=".navbar-ex1-collapse"
-                >
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" /> 
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-        </button>
-        <div className="collapse navbar-collapse navbar-ex1-collapse">
-          <ul className="nav navbar-nav navbar-right">
-            <li> 
-              <h2>The Layout</h2>
-            </li>
-            <li> 
-            <Link to="/">Sign Up</Link>
-            </li>
-            <li>
-            <Link to="/books">Log in</Link>
-            </li>
-          </ul>
-        </div>
+
+class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { loginModal: false, signUpModal: false}
+  }
+toggleLogin = () => {
+    this.setState({
+      loginModal: !this.state.loginModal
+    });
+}
+
+toggleSignUp = () => {
+    this.setState({
+      signUpModal: !this.state.signUpModal
+    });
+}
+  render() { 
+    return (
+      <div>
+         <nav className="navbar navbar-inverse navbar-top">
+          <div className="container-fluid">
+              <div className="navbar-header">
+               <a href="/" className="navbar-brand">
+                 The Layover
+                </a>
+                 <SignUp />
+                <Login />
+              </div>
+           </div>
+        </nav> 
       </div>
-    </div>
-  </div>
-);
-
+    );
+  };
+};
 export default Nav;

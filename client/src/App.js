@@ -1,23 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
+import { Button, Form,FormGroup,Label,Input,FormTex,Modal,ModalHeader,ModalBody,ModalFooter} from "reactstrap";
+//import Books from "./pages/Books";
+//import Detail from "./pages/Detail";
+//import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import SignUp from "./components/Modals/SignUp.js"
+import Login from "./components/Modals/Login.js"
 import './app.css'
-const App = () => (
-  <Router>
-    <div className = "Image">
+
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+    <Nav /> 
       
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Books} />
-        <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
-        <Route component={NoMatch} />
-      </Switch>
-    </div>
-  </Router>
-);
+    
+   
+    
+     </div>
+    );
+  }
+};
 
 export default App;

@@ -12,7 +12,7 @@ import {
   ModalFooter
 } from "reactstrap";
 
-const newUser = require("../user.js");
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class Login extends React.Component {
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>
-          {this.props.buttonLabel}
+          {this.props.buttonLabel} Login
         </Button>
         <Modal
           isOpen={this.state.modal}
