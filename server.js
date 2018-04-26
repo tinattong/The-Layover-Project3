@@ -1,53 +1,27 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const passport = require('passport');
-//const routes = require("./routes");
-
-const user = require('./routes/api/user');
-
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const users = require('./routes/api/user');
+
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
 // Add routes, both API and view
+app.use(routes);
 
-app.use("/api/user", users);
-//DB config
-//const db = require('./config/keys').mongoURI;
-// connect to mongoDB
-mongoose
-  .connect("mongodb://localhost/layover", {
-    useMongoClient: true
-  })
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
-
-  // Passport middleware
-app.use(passport.initialize());
-
-// Passport Config 
-require('./config/passport.js')(passport);
-
-//route to home
-app.get('/', (req, res) => res.send('Hello Mongo'));
-
-//const port = process.env.PORT || 3000;
-
-//app.listen(port, () => console.log(`Server running on port ${port}`));
 // Set up promises with mongoose
-//mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-//mongoose.connect(
-//  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
-//  {
-//    useMongoClient: true
-//  }
-//);
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
+  {
+    useMongoClient: true
+  }
+);
 
 // Start the API server
 app.listen(PORT, function() {

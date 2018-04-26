@@ -8,23 +8,26 @@ import Nav from "./components/Nav";
 import SignUp from "./components/Modals/SignUp.js"
 import Login from "./components/Modals/Login.js"
 import './app.css'
-import Footer from './components/Footer/Footer';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-    <Nav /> 
-        <SignUp/> 
-        <Login/>
+import beachImg from './images/beach-exotic-holiday-248797.jpg';
+
+const App = () => (
+  <Router>
+    <div className= "img-container">
     
-    <Footer/> 
+      <img className="backgroundImage" src={beachImg} />      
+      
+      <Nav />
+
+      <Switch>
+        <Route exact path="/" component={Books} />
+        <Route exact path="/books" component={Books} />
+        <Route exact path="/books/:id" component={Detail} />
+        <Route component={NoMatch} />
+      </Switch>
     
-     </div>
-   
-   
-    );
-  }
-};
+    </div>
+  </Router>
+);
 
 export default App;
