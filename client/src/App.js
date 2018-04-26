@@ -8,17 +8,14 @@ import Nav from "./components/Nav";
 import SignUp from "./components/Modals/SignUp.js"
 import Login from "./components/Modals/Login.js"
 import './app.css'
-
+import Footer from './components/Footer/Footer';
 
 class App extends React.Component {
   render() {
     return (
       <div>
     <Nav /> 
-      
-    
-   
-    
+          
      </div>
     );
   }

@@ -16,8 +16,14 @@ import {
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modal: false,
-       user: { name: "", email: "", password: "" } };
+    this.state = {
+      modal: false,
+      user: {
+        name: "",
+        email: "",
+        password: ""
+      }
+    };
 
     this.toggle = this.toggle.bind(this);
   }
