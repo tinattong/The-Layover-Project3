@@ -60,7 +60,7 @@ class SignUp extends React.Component {
 
   render() {
     return (
-     <div>
+     <div class="sign">
         <Button color="primary" onClick={this.toggle}>
           {this.props.buttonLabel} Sign Up
         </Button>
