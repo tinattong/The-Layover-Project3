@@ -59,8 +59,7 @@ class SignUp extends React.Component {
   }
 
   render() {
-    return (
-     <div class="sign">
+    return <div>
         <Button color="primary" onClick={this.toggle}>
           {this.props.buttonLabel} Sign Up
         </Button>
@@ -69,29 +68,27 @@ class SignUp extends React.Component {
             <ModalHeader toggle={this.toggle}>
               Sign Up for Layover
             </ModalHeader>
-            <FormGroup >
+            <FormGroup>
               <Form noValidate onSubmit={this.onSubmit}>
-              <Label for="name">Name</Label>
-              <Input type="string" name="name" value={this.state.name} id="exampleName" placeholder="What's Your Name?" onChange={this.onChange} />
-              <Label for="exampleEmail">Email</Label>
-              <Input type="email" name="email" value={this.state.email} id="exampleEmail" placeholder="Enter Your Email." onChange={this.onChange} />
-              <Label for="examplePassword">Password</Label>
-              <Input type="password" name="password" value={this.state.password} id="examplePassword" placeholder="Must be 6 Characters." onChange={this.onChange} />
+                <Label for="name">Name</Label>
+                <Input type="string" name="name" value={this.state.name} id="exampleName" placeholder="What's Your Name?" onChange={this.onChange} />
+                <Label for="exampleEmail">Email</Label>
+                <Input type="email" name="email" value={this.state.email} id="exampleEmail" placeholder="Enter Your Email." onChange={this.onChange} />
+                <Label for="examplePassword">Password</Label>
+                <Input type="password" name="password" value={this.state.password} id="examplePassword" placeholder="Must be 6 Characters." onChange={this.onChange} />
+                <ModalFooter>
+                  <Button type='submit' color="primary" onClick={this.toggle}>
+                    Sign Up
+                  </Button>
+                  <Button color="secondary" onClick={this.toggle}>
+                    Cancel
+                  </Button>
+                </ModalFooter>
               </Form>
             </FormGroup>
-
-            <ModalFooter>
-              <Button color="primary" onClick={this.toggle}>
-                Sign Up
-              </Button>
-              <Button color="secondary" onClick={this.toggle}>
-                Cancel
-              </Button>
-            </ModalFooter>
           </ModalBody>
         </Modal>
-      </div>
-      );
+      </div>;
   }
 }
 
