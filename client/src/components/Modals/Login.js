@@ -1,23 +1,22 @@
 import React from "react";
 import {
   Button,
-  Form,
   FormGroup,
   Label,
+  Form,
   Input,
-  FormTex,
   Modal,
   ModalHeader,
   ModalBody,
   ModalFooter
 } from "reactstrap";
 
-// outside src
-//const newUser = require("../../../../routes/api/user.js");
+
+
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       modal: false,
       user: {
@@ -27,35 +26,35 @@ class Login extends React.Component {
     };
 
     this.toggle = this.toggle.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const user = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    console.log(user);
   }
 
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
   toggle() {
     this.setState({
       modal: !this.state.modal
     });
   }
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
-    if  (!this.state.email) {
-      alert(`Must be Vaild Email`);
-    } else if (this.state.password.length < 6) {
-      alert(`Password must contain at least 6 characters`);
-    } else {
-      alert(`Hello ${this.state.name} welcome to Layover!`);
-    }
+  
 
-    this.setState({
 
-      email: "",
-      password: ""
-    });
-  };
-
-  render() {
+  render () {
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>
+       <Button color="primary" onClick={this.toggle}>
           {this.props.buttonLabel} Login
         </Button>
         <Modal
@@ -66,23 +65,26 @@ class Login extends React.Component {
           <ModalHeader toggle={this.toggle}>Login to Layover</ModalHeader>
           <ModalBody>
             <FormGroup>
+              <Form noValidate onSubmit={this.onSubmit}>
               <Label for="exampleEmail">Email</Label>
               <Input
                 type="email"
                 name="email"
-                id="exampleEmail"
+                value={this.state.password}
+                onChange={this.onChange}
                 placeholder="Enter Your Email."
               />
-            </FormGroup>
-            <FormGroup>
               <Label for="examplePassword">Password</Label>
               <Input
                 type="password"
                 name="password"
-                id="examplePassword"
+                value={this.state.password}
+                onChange={this.onChange}
                 placeholder="Enter Your Password."
               />
+              </Form>
             </FormGroup>
+            
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>
@@ -94,8 +96,9 @@ class Login extends React.Component {
           </ModalFooter>
         </Modal>
       </div>
-    );
+    )
   }
 }
+
 
 export default Login;
