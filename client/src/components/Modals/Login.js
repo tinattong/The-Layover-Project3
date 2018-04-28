@@ -11,9 +11,6 @@ import {
   ModalFooter
 } from "reactstrap";
 
-
-
-
 class Login extends React.Component {
   constructor() {
     super();
@@ -40,6 +37,8 @@ class Login extends React.Component {
     console.log(user);
   }
 
+
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -52,51 +51,32 @@ class Login extends React.Component {
 
 
   render () {
-    return (
-      <div>
-       <Button color="primary" onClick={this.toggle}>
+    return <div>
+        <Button color="primary" onClick={this.toggle}>
           {this.props.buttonLabel} Login
         </Button>
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
-          className={this.props.className}
-        >
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Login to Layover</ModalHeader>
           <ModalBody>
             <FormGroup>
-              <Form noValidate onSubmit={this.onSubmit}>
-              <Label for="exampleEmail">Email</Label>
-              <Input
-                type="email"
-                name="email"
-                value={this.state.password}
-                onChange={this.onChange}
-                placeholder="Enter Your Email."
-              />
-              <Label for="examplePassword">Password</Label>
-              <Input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.onChange}
-                placeholder="Enter Your Password."
-              />
+              <Form onSubmit={this.onSubmit}>
+                <Label for="exampleEmail">Email</Label>
+                <Input type="email" name="email" value={this.state.password} onChange={this.onChange} placeholder="Enter Your Email." />
+                <Label for="examplePassword">Password</Label>
+                <Input type="password" name="password" value={this.state.password} onChange={this.onChange} placeholder="Enter Your Password." />
+
+                <ModalFooter>
+                  <Button type="submit" color="primary" onClick={this.toggle}>
+                    Login
+                  </Button> <Button color="secondary" onClick={this.toggle}>
+                    Cancel
+                  </Button>
+                </ModalFooter>
               </Form>
             </FormGroup>
-            
           </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
-              Login
-            </Button>{" "}
-            <Button color="secondary" onClick={this.toggle}>
-              Cancel
-            </Button>
-          </ModalFooter>
         </Modal>
-      </div>
-    )
+      </div>;
   }
 }
 
