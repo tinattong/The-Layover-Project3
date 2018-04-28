@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Login from '../Modals/Login';
 import SignUp from '../Modals/SignUp';
-
-
+import './nav.css'
 
 class Nav extends Component {
   constructor(props) {
@@ -29,7 +28,10 @@ toggleSignUp = () => {
                <a href="/" className="navbar-brand">
                  The Layover
                 </a>
-                 <SignUp />
+              </div>
+
+              <div>
+                <SignUp />
                 <Login />
               </div>
            </div>
